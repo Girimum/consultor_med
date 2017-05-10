@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interface;
+package visao;
 
 /**
  *
@@ -37,14 +37,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButtonAgenda = new javax.swing.JButton();
         jLabelInternalFundo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jButtonFecharBemVindos = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadrastro = new javax.swing.JMenu();
         jMenuItemCadMedico = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItemCadPaciente = new javax.swing.JMenuItem();
-        jMenuItemCadEnfermeira = new javax.swing.JMenuItem();
-        jMenuItemCadUsuario = new javax.swing.JMenuItem();
         jMenuRelatorio = new javax.swing.JMenu();
         jMenuFeramentas = new javax.swing.JMenu();
         jMenuItemChameBemVindo = new javax.swing.JMenuItem();
@@ -52,9 +52,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItemSair = new javax.swing.JMenuItem();
 
         jLabelPainelFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Internal.png.png"))); // NOI18N
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
 
         jInternalFrameBemVindo.setTitle("Bem-Vindos");
         jInternalFrameBemVindo.setVisible(true);
@@ -98,18 +95,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabelInternalFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Internal.png (2).png"))); // NOI18N
         jPanelInternal.add(jLabelInternalFundo);
-        jLabelInternalFundo.setBounds(0, 0, 590, 330);
+        jLabelInternalFundo.setBounds(0, -20, 590, 350);
 
         jInternalFrameBemVindo.getContentPane().add(jPanelInternal);
         jPanelInternal.setBounds(-10, 10, 610, 340);
-
-        getContentPane().add(jInternalFrameBemVindo);
-        jInternalFrameBemVindo.setBounds(0, 50, 610, 370);
-
-        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
-        jLabel1.setText("Sistema de Gerenciamendo de:");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 10, 220, 30);
 
         jButtonFecharBemVindos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/exit.png"))); // NOI18N
         jButtonFecharBemVindos.setToolTipText("Fechar Tela Bem-Vendo");
@@ -118,10 +107,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 jButtonFecharBemVindosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonFecharBemVindos);
-        jButtonFecharBemVindos.setBounds(530, -7, 80, 60);
 
-        jMenuCadrastro.setText("Cadatro");
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        jLabel1.setText("Sistema de Gerenciamendo de:");
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/logo1.png"))); // NOI18N
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        jMenuCadrastro.setText("Cadastro");
 
         jMenuItemCadMedico.setText("Médico");
         jMenuItemCadMedico.addActionListener(new java.awt.event.ActionListener() {
@@ -131,14 +126,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenuCadrastro.add(jMenuItemCadMedico);
 
+        jMenuItem1.setText("Secretárias");
+        jMenuCadrastro.add(jMenuItem1);
+
         jMenuItemCadPaciente.setText("Paciente");
         jMenuCadrastro.add(jMenuItemCadPaciente);
-
-        jMenuItemCadEnfermeira.setText("Enfermeira");
-        jMenuCadrastro.add(jMenuItemCadEnfermeira);
-
-        jMenuItemCadUsuario.setText("Usuario");
-        jMenuCadrastro.add(jMenuItemCadUsuario);
 
         jMenuBar1.add(jMenuCadrastro);
 
@@ -171,13 +163,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(628, 501));
+        setSize(new java.awt.Dimension(620, 488));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenuItemCadMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadMedicoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItemCadMedicoActionPerformed
 
     private void jButtonCadPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadPacienteActionPerformed
         // TODO add your handling code here:
@@ -196,6 +184,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         tela.setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenuItemChameBemVindoActionPerformed
+
+    private void jMenuItemCadMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadMedicoActionPerformed
+        FormMedico tela = new FormMedico();
+        tela.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadMedicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,15 +235,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabelInternalFundo;
     private javax.swing.JLabel jLabelPainelFundo;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadrastro;
     private javax.swing.JMenu jMenuFeramentas;
-    private javax.swing.JMenuItem jMenuItemCadEnfermeira;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItemCadMedico;
     private javax.swing.JMenuItem jMenuItemCadPaciente;
-    private javax.swing.JMenuItem jMenuItemCadUsuario;
     private javax.swing.JMenuItem jMenuItemChameBemVindo;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenu jMenuRelatorio;
