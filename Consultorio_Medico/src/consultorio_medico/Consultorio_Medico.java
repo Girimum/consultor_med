@@ -5,6 +5,8 @@
  */
 package consultorio_medico;
 
+import visao.Login;
+
 /**
  *
  * @author Mota
@@ -16,6 +18,9 @@ public class Consultorio_Medico {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Login telaLogin = new Login();
+        telaLogin.setVisible(true);
+        
     }
     
 }
