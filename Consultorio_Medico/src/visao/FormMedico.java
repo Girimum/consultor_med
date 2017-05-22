@@ -63,7 +63,7 @@ public class FormMedico extends javax.swing.JFrame {
         jMenuItemCadPaciente = new javax.swing.JMenuItem();
         jMenuRelatorio = new javax.swing.JMenu();
         jMenuFeramentas = new javax.swing.JMenu();
-        jMenuItemChameBemVindo = new javax.swing.JMenuItem();
+        jMenuItemBemVindos = new javax.swing.JMenuItem();
         jMenuSair = new javax.swing.JMenu();
         jMenuItemSair = new javax.swing.JMenuItem();
 
@@ -201,10 +201,9 @@ public class FormMedico extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jTextFieldFone, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addContainerGap(89, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2)
-                        .addContainerGap())))
+                        .addGap(0, 79, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,6 +254,7 @@ public class FormMedico extends javax.swing.JFrame {
 
         jMenuCadrastro.setText("Cadastro");
 
+        jMenuItemCadMedico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/CadMedicos.png"))); // NOI18N
         jMenuItemCadMedico.setText("Médico");
         jMenuItemCadMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -263,10 +263,22 @@ public class FormMedico extends javax.swing.JFrame {
         });
         jMenuCadrastro.add(jMenuItemCadMedico);
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/secretária.jpg"))); // NOI18N
         jMenuItem1.setText("Secretárias");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenuCadrastro.add(jMenuItem1);
 
+        jMenuItemCadPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/cadPacientes.png"))); // NOI18N
         jMenuItemCadPaciente.setText("Paciente");
+        jMenuItemCadPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadPacienteActionPerformed(evt);
+            }
+        });
         jMenuCadrastro.add(jMenuItemCadPaciente);
 
         jMenuBar1.add(jMenuCadrastro);
@@ -276,13 +288,14 @@ public class FormMedico extends javax.swing.JFrame {
 
         jMenuFeramentas.setText("Feramentas");
 
-        jMenuItemChameBemVindo.setText("Bem-Vindo");
-        jMenuItemChameBemVindo.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemBemVindos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casa.jpg"))); // NOI18N
+        jMenuItemBemVindos.setText("Inicio");
+        jMenuItemBemVindos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemChameBemVindoActionPerformed(evt);
+                jMenuItemBemVindosActionPerformed(evt);
             }
         });
-        jMenuFeramentas.add(jMenuItemChameBemVindo);
+        jMenuFeramentas.add(jMenuItemBemVindos);
 
         jMenuBar1.add(jMenuFeramentas);
 
@@ -346,11 +359,23 @@ public class FormMedico extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenuItemCadMedicoActionPerformed
 
-    private void jMenuItemChameBemVindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemChameBemVindoActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        FormSecretaria tela = new FormSecretaria ();
+        tela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItemCadPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadPacienteActionPerformed
+        FormPaciente tela = new FormPaciente();
+        tela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItemCadPacienteActionPerformed
+
+    private void jMenuItemBemVindosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBemVindosActionPerformed
         TelaPrincipal tela = new TelaPrincipal();
         tela.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jMenuItemChameBemVindoActionPerformed
+    }//GEN-LAST:event_jMenuItemBemVindosActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
         System.exit(0);
@@ -413,9 +438,9 @@ public class FormMedico extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuCadrastro;
     private javax.swing.JMenu jMenuFeramentas;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItemBemVindos;
     private javax.swing.JMenuItem jMenuItemCadMedico;
     private javax.swing.JMenuItem jMenuItemCadPaciente;
-    private javax.swing.JMenuItem jMenuItemChameBemVindo;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenu jMenuRelatorio;
     private javax.swing.JMenu jMenuSair;
