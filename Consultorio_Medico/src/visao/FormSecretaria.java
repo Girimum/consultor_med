@@ -34,7 +34,7 @@ public class FormSecretaria extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jFormattedTextFieldCPF = new javax.swing.JFormattedTextField();
         jTextFieldNome = new javax.swing.JTextField();
-        jComboBoxSexo = new javax.swing.JComboBox<String>();
+        jComboBoxSexo = new javax.swing.JComboBox<>();
         jButtonNovo = new javax.swing.JButton();
         jButtonSalvar = new javax.swing.JButton();
         jButtonCad = new javax.swing.JButton();
@@ -54,6 +54,7 @@ public class FormSecretaria extends javax.swing.JFrame {
         jPasswordFieldSenhaMed = new javax.swing.JPasswordField();
         jFormattedTextFieldRG = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadrastro = new javax.swing.JMenu();
         jMenuItemCadMedico = new javax.swing.JMenuItem();
@@ -61,7 +62,7 @@ public class FormSecretaria extends javax.swing.JFrame {
         jMenuItemCadPaciente = new javax.swing.JMenuItem();
         jMenuRelatorio = new javax.swing.JMenu();
         jMenuFeramentas = new javax.swing.JMenu();
-        jMenuItemBemVindos = new javax.swing.JMenuItem();
+        jMenuItemChameBemVindo = new javax.swing.JMenuItem();
         jMenuSair = new javax.swing.JMenu();
         jMenuItemSair = new javax.swing.JMenuItem();
 
@@ -74,6 +75,7 @@ public class FormSecretaria extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -93,7 +95,7 @@ public class FormSecretaria extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Feminino", "Masculino" }));
+        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Feminino", "Masculino" }));
 
         jButtonNovo.setText("Novo");
 
@@ -246,8 +248,17 @@ public class FormSecretaria extends javax.swing.JFrame {
                 .addContainerGap(75, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(57, 39, 568, 414);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Cadastro de Secretárias");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(190, 11, 239, 22);
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Fundo login.jpg"))); // NOI18N
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(0, 0, 740, 510);
 
         jMenuCadrastro.setText("Cadastro");
 
@@ -285,14 +296,13 @@ public class FormSecretaria extends javax.swing.JFrame {
 
         jMenuFeramentas.setText("Feramentas");
 
-        jMenuItemBemVindos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casa.jpg"))); // NOI18N
-        jMenuItemBemVindos.setText("Inicio");
-        jMenuItemBemVindos.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemChameBemVindo.setText("Inicio");
+        jMenuItemChameBemVindo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemBemVindosActionPerformed(evt);
+                jMenuItemChameBemVindoActionPerformed(evt);
             }
         });
-        jMenuFeramentas.add(jMenuItemBemVindos);
+        jMenuFeramentas.add(jMenuItemChameBemVindo);
 
         jMenuBar1.add(jMenuFeramentas);
 
@@ -309,30 +319,6 @@ public class FormSecretaria extends javax.swing.JFrame {
         jMenuBar1.add(jMenuSair);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(120, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -367,11 +353,11 @@ public class FormSecretaria extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jMenuItemCadPacienteActionPerformed
 
-    private void jMenuItemBemVindosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBemVindosActionPerformed
+    private void jMenuItemChameBemVindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemChameBemVindoActionPerformed
         TelaPrincipal tela = new TelaPrincipal();
         tela.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jMenuItemBemVindosActionPerformed
+    }//GEN-LAST:event_jMenuItemChameBemVindoActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
         System.exit(0);
@@ -423,6 +409,7 @@ public class FormSecretaria extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField jFormattedTextFieldCPF;
     private javax.swing.JFormattedTextField jFormattedTextFieldRG;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -435,9 +422,9 @@ public class FormSecretaria extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuCadrastro;
     private javax.swing.JMenu jMenuFeramentas;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItemBemVindos;
     private javax.swing.JMenuItem jMenuItemCadMedico;
     private javax.swing.JMenuItem jMenuItemCadPaciente;
+    private javax.swing.JMenuItem jMenuItemChameBemVindo;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenu jMenuRelatorio;
     private javax.swing.JMenu jMenuSair;

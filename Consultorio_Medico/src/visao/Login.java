@@ -37,8 +37,7 @@ public class Login extends javax.swing.JFrame {
         jButtonSair = new javax.swing.JButton();
         jButtonEnviar = new javax.swing.JButton();
         jPasswordFieldSenha = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fundotelaLogin.png"))); // NOI18N
 
@@ -47,19 +46,19 @@ public class Login extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/login.png"))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(180, 30, 260, 230);
+        jLabel3.setBounds(200, 20, 260, 230);
 
         jLabelUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelUsuario.setForeground(new java.awt.Color(255, 255, 255));
         jLabelUsuario.setText("Usuario:");
         getContentPane().add(jLabelUsuario);
-        jLabelUsuario.setBounds(210, 290, 60, 20);
+        jLabelUsuario.setBounds(220, 290, 60, 20);
 
         jLabelSenha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelSenha.setForeground(new java.awt.Color(255, 255, 255));
         jLabelSenha.setText("Senha:");
         getContentPane().add(jLabelSenha);
-        jLabelSenha.setBounds(220, 330, 60, 20);
+        jLabelSenha.setBounds(230, 330, 60, 20);
 
         jTextFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +66,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextFieldUsuario);
-        jTextFieldUsuario.setBounds(270, 290, 120, 20);
+        jTextFieldUsuario.setBounds(280, 290, 120, 20);
 
         jButtonSair.setText("Sair");
         jButtonSair.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -77,7 +76,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonSair);
-        jButtonSair.setBounds(190, 380, 70, 19);
+        jButtonSair.setBounds(220, 380, 70, 19);
 
         jButtonEnviar.setText("Enviar");
         jButtonEnviar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -87,20 +86,15 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonEnviar);
-        jButtonEnviar.setBounds(330, 380, 80, 19);
+        jButtonEnviar.setBounds(350, 380, 80, 19);
         getContentPane().add(jPasswordFieldSenha);
-        jPasswordFieldSenha.setBounds(270, 330, 120, 20);
+        jPasswordFieldSenha.setBounds(280, 330, 120, 20);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/logo1_1.png"))); // NOI18N
-        jLabel1.setToolTipText("Girimun");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(550, 400, 77, 80);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Fundo login.jpg"))); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 0, 690, 500);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fund.jpg"))); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 0, 630, 480);
-
-        setSize(new java.awt.Dimension(648, 517));
+        setSize(new java.awt.Dimension(707, 530));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -113,16 +107,13 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSairActionPerformed
 
     private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
-  if(jTextFieldUsuario.getText().equals("") && jPasswordFieldSenha.getText().equals("")  ){
-      JOptionPane.showMessageDialog(rootPane,"Bem Vindo Cliente !");
+  if(jTextFieldUsuario.getText().equals("") && jPasswordFieldSenha.getText().equals("")){
        TelaPrincipal tela = new TelaPrincipal();
        tela.setVisible(true);
        dispose();
-          
-      } else {
+      }else{
            JOptionPane.showMessageDialog(rootPane,"Senha ou Usuario Invalidos!");
        }
-  
     }//GEN-LAST:event_jButtonEnviarActionPerformed
 
     /**
@@ -163,10 +154,9 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonEnviar;
     private javax.swing.JButton jButtonSair;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabelSenha;
     private javax.swing.JLabel jLabelUsuario;
     private javax.swing.JPasswordField jPasswordFieldSenha;

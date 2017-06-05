@@ -38,9 +38,6 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemCadMedico">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/IMG/CadMedicos.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="M&#xe9;dico"/>
               </Properties>
               <Events>
@@ -49,25 +46,13 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/IMG/secret&#xe1;ria.jpg"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Secret&#xe1;rias"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
-              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemCadPaciente">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/IMG/cadPacientes.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Paciente"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemCadPacienteActionPerformed"/>
-              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -81,15 +66,12 @@
             <Property name="text" type="java.lang.String" value="Feramentas"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemBemVindos">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemChameBemVindo">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/IMG/casa.jpg"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Inicio"/>
+                <Property name="text" type="java.lang.String" value="Bem-Vindo"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemBemVindosActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemChameBemVindoActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
