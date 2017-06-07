@@ -11,13 +11,13 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class conexaoBD {
-   public Statement satm;
-   public ResultSet rs;
-   private String driver = "org.postgresql.Driver";
-   private String caminho = "jdbc.postgresql://localhost:80/nomedoBanco";
-   private String usuario; 
-   private String senha; 
-   public Connection con;
+    public Statement stm;
+    public ResultSet rs;
+    private String driver = "org.postgresql.Driver";
+    private String caminho = "jdbc.postgresql://localhost:80/clinicaMedica";//localhost:5432
+    private String usuario = "root"; 
+    private String senha = "admin"; 
+    public Connection con;
 
 
 public void conexao(){

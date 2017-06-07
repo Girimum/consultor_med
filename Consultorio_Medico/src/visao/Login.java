@@ -87,6 +87,12 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonEnviar);
         jButtonEnviar.setBounds(350, 380, 80, 19);
+
+        jPasswordFieldSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordFieldSenhaActionPerformed(evt);
+            }
+        });
         getContentPane().add(jPasswordFieldSenha);
         jPasswordFieldSenha.setBounds(280, 330, 120, 20);
 
@@ -115,6 +121,10 @@ public class Login extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(rootPane,"Senha ou Usuario Invalidos!");
        }
     }//GEN-LAST:event_jButtonEnviarActionPerformed
+
+    private void jPasswordFieldSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordFieldSenhaActionPerformed
 
     /**
      * @param args the command line arguments

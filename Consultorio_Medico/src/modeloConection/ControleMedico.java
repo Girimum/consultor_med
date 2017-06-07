@@ -14,7 +14,7 @@ import modelo.modeloMed;
      public void Salvar(modeloMed mod){
          conex.conexao();
         try {
-            PreparedStatement pst = conex.con.prepareStatement("insert into");
+            PreparedStatement pst = conex.con.prepareStatement("insert into medicos nome, cpf, rg, telefone, endereco, sexo, senha");
             pst.setString(1, mod.getNome());
             pst.setInt(2, mod.getCpf ());
             pst.setInt(3, mod.getRg ());
