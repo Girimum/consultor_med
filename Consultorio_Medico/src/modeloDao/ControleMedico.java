@@ -1,16 +1,19 @@
+package modeloDao;
 
-package modeloConection;
 
+
+
+import modeloConection.conexaoBD;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import modelo.modeloMed;
+import modeloBeans.BeansMed;
 
 public class ControleMedico {    
         conexaoBD conex = new conexaoBD();
-        modeloMed mod = new modeloMed();
+        BeansMed mod = new BeansMed();
      
-    public void Salvar(modeloMed mod){
+    public void Salvar(BeansMed mod){
         conex.conexao();
         try {
             PreparedStatement pst = conex.con.prepareStatement("insert into medicos nome, cpf, rg, telefone, endereco, sexo, senha");

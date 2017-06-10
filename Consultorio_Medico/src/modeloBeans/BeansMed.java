@@ -1,8 +1,8 @@
 
-package modelo;
+package modeloBeans;
 
 
-public class modeloMed {
+public class BeansMed {
     private int codigo ;
     private String nome ;
     private String sexo;

@@ -5,8 +5,8 @@
  */
 package visao;
 
-import modelo.modeloMed;
-import modeloConection.ControleMedico;
+import modeloBeans.BeansMed;
+import modeloDao.ControleMedico;
 import modeloConection.conexaoBD;
 /**
  *
@@ -14,7 +14,7 @@ import modeloConection.conexaoBD;
  */
 public class FormMedico extends javax.swing.JFrame {
 
-    modeloMed mod = new modeloMed();
+    BeansMed mod = new BeansMed();
     ControleMedico control = new ControleMedico();
     conexaoBD conex = new conexaoBD();
     
@@ -58,7 +58,7 @@ public class FormMedico extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jPasswordFieldSenhaMed = new javax.swing.JPasswordField();
         jFormattedTextFieldRG = new javax.swing.JFormattedTextField();
-        jComboBoxSexo = new javax.swing.JComboBox<>();
+        jComboBoxSexo = new javax.swing.JComboBox<String>();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadrastro = new javax.swing.JMenu();
@@ -87,6 +87,7 @@ public class FormMedico extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setEnabled(false);
 
         jLabel2.setText("Nome:");
 
@@ -99,12 +100,14 @@ public class FormMedico extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextFieldCPF.setEnabled(false);
         jFormattedTextFieldCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFormattedTextFieldCPFActionPerformed(evt);
             }
         });
 
+        jTextFieldNome.setEnabled(false);
         jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNomeActionPerformed(evt);
@@ -112,8 +115,14 @@ public class FormMedico extends javax.swing.JFrame {
         });
 
         jButtonNovo.setText("Novo");
+        jButtonNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNovoActionPerformed(evt);
+            }
+        });
 
         jButtonSalvar.setText("Salvar");
+        jButtonSalvar.setEnabled(false);
         jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSalvarActionPerformed(evt);
@@ -121,8 +130,10 @@ public class FormMedico extends javax.swing.JFrame {
         });
 
         jButtonEditar.setText("Editar");
+        jButtonEditar.setEnabled(false);
 
         jButtonExcluir.setText("Excluir");
+        jButtonExcluir.setEnabled(false);
 
         jTableMedico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -149,10 +160,15 @@ public class FormMedico extends javax.swing.JFrame {
 
         jLabel7.setText("Telefone:");
 
+        jTextFieldFoneTeleF.setEnabled(false);
+
         jLabel8.setText("Endereço:");
+
+        jTextFieldEndereco.setEnabled(false);
 
         jLabel9.setText("Senha de Acesso:");
 
+        jPasswordFieldSenhaMed.setEnabled(false);
         jPasswordFieldSenhaMed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordFieldSenhaMedActionPerformed(evt);
@@ -164,8 +180,10 @@ public class FormMedico extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextFieldRG.setEnabled(false);
 
-        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F", " " }));
+        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F", " " }));
+        jComboBoxSexo.setEnabled(false);
         jComboBoxSexo.setName(""); // NOI18N
         jComboBoxSexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -385,7 +403,23 @@ public class FormMedico extends javax.swing.JFrame {
         mod.setEndereco(jTextFieldEndereco.getText());
         mod.getSenha(jPasswordFieldSenhaMed.getText());
         control.Salvar(mod); 
+        jTextFieldNome.setText("");
+        jFormattedTextFieldCPF.setText("");
+        jFormattedTextFieldRG.setText("");
+        jTextFieldCRM.setText("");
+        jTextFieldFoneTeleF.setText("");
+        jTextFieldEndereco.setText("");
         
+         jTextFieldNome.setEnabled(false);
+         jFormattedTextFieldCPF.setEnabled(false);
+         jFormattedTextFieldRG.setEnabled(false);
+         jTextFieldCRM.setEnabled(false);
+         jComboBoxSexo.setEnabled(false);
+         jTextFieldFoneTeleF.setEnabled(false);
+         jTextFieldEndereco.setEnabled(false);
+         jButtonSalvar.setEnabled(false);
+        
+       
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jFormattedTextFieldCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldCPFActionPerformed
@@ -395,6 +429,19 @@ public class FormMedico extends javax.swing.JFrame {
     private void jComboBoxSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSexoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxSexoActionPerformed
+
+    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
+        jButtonSalvar.setEnabled(true);
+        jTextFieldNome.setEnabled(true);
+        jFormattedTextFieldCPF.setEnabled(true);
+        jFormattedTextFieldRG.setEnabled(true);
+        jTextFieldCRM.setEnabled(true);
+        jComboBoxSexo.setEnabled(true);
+        jTextFieldFoneTeleF.setEnabled(true);
+        jTextFieldEndereco.setEnabled(true);
+        jPasswordFieldSenhaMed.setEnabled(true);
+         
+    }//GEN-LAST:event_jButtonNovoActionPerformed
 
     /**
      * @param args the command line arguments
