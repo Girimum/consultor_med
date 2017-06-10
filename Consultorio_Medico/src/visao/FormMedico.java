@@ -5,15 +5,19 @@
  */
 package visao;
 
+import modelo.modeloMed;
+import modeloConection.ControleMedico;
+import modeloConection.conexaoBD;
 /**
  *
  * @author Usuario-pc
  */
 public class FormMedico extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FormMedico
-     */
+    modeloMed mod = new modeloMed();
+    ControleMedico control = new ControleMedico();
+    conexaoBD conex = new conexaoBD();
+    
     public FormMedico() {
         initComponents();
     }
@@ -38,7 +42,6 @@ public class FormMedico extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jFormattedTextFieldCPF = new javax.swing.JFormattedTextField();
         jTextFieldNome = new javax.swing.JTextField();
-        jComboBoxSexo = new javax.swing.JComboBox<>();
         jButtonNovo = new javax.swing.JButton();
         jButtonSalvar = new javax.swing.JButton();
         jButtonEditar = new javax.swing.JButton();
@@ -49,12 +52,13 @@ public class FormMedico extends javax.swing.JFrame {
         jTextFieldCRM = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextFieldFone = new javax.swing.JTextField();
+        jTextFieldFoneTeleF = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jTextFieldEndereco = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jPasswordFieldSenhaMed = new javax.swing.JPasswordField();
         jFormattedTextFieldRG = new javax.swing.JFormattedTextField();
+        jComboBoxSexo = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadrastro = new javax.swing.JMenu();
@@ -95,6 +99,11 @@ public class FormMedico extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextFieldCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldCPFActionPerformed(evt);
+            }
+        });
 
         jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,11 +111,14 @@ public class FormMedico extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cirurgia", "Emergencias ", " " }));
-
         jButtonNovo.setText("Novo");
 
         jButtonSalvar.setText("Salvar");
+        jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarActionPerformed(evt);
+            }
+        });
 
         jButtonEditar.setText("Editar");
 
@@ -153,6 +165,14 @@ public class FormMedico extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
+        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F", " " }));
+        jComboBoxSexo.setName(""); // NOI18N
+        jComboBoxSexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxSexoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -180,7 +200,7 @@ public class FormMedico extends javax.swing.JFrame {
                                 .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(24, 24, 24)
                                 .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jComboBoxSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -199,10 +219,10 @@ public class FormMedico extends javax.swing.JFrame {
                                             .addComponent(jLabel8))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextFieldFone, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldFoneTeleF, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addGap(0, 79, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(0, 87, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -221,7 +241,7 @@ public class FormMedico extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextFieldFone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldFoneTeleF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -355,6 +375,27 @@ public class FormMedico extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItemSairActionPerformed
 
+    private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
+        mod.setNome(jTextFieldNome.getText());
+        mod.setSexo((String) jComboBoxSexo.getSelectedItem());
+        mod.getcpf(jFormattedTextFieldCPF.getText());
+        mod.getRg(jFormattedTextFieldRG.getText());
+        mod.getCrm(jTextFieldCRM.getText());
+        mod.setTelefone(jTextFieldFoneTeleF.getText());
+        mod.setEndereco(jTextFieldEndereco.getText());
+        mod.getSenha(jPasswordFieldSenhaMed.getText());
+        control.Salvar(mod); 
+        
+    }//GEN-LAST:event_jButtonSalvarActionPerformed
+
+    private void jFormattedTextFieldCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldCPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldCPFActionPerformed
+
+    private void jComboBoxSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxSexoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -383,10 +424,8 @@ public class FormMedico extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormMedico().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new FormMedico().setVisible(true);
         });
     }
 
@@ -427,7 +466,7 @@ public class FormMedico extends javax.swing.JFrame {
     private javax.swing.JTable jTableMedico;
     private javax.swing.JTextField jTextFieldCRM;
     private javax.swing.JTextField jTextFieldEndereco;
-    private javax.swing.JTextField jTextFieldFone;
+    private javax.swing.JTextField jTextFieldFoneTeleF;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldRG;
     // End of variables declaration//GEN-END:variables
