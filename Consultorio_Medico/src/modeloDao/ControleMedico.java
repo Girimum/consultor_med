@@ -16,7 +16,7 @@ public class ControleMedico {
     public void Salvar(BeansMed mod){
         conex.conexao();
         try {
-            PreparedStatement pst = conex.con.prepareStatement("insert into medicos nome, cpf, rg, telefone, endereco, sexo, senha");
+            PreparedStatement pst = conex.con.prepareStatement("insert into medicos (nome, cpf, rg, telefone, endereco, sexo, senha) values(?, ?, ?, ?, ?, ?, ?)");
             pst.setString(1, mod.getNome());
             pst.setInt(2, mod.getCpf ());
             pst.setInt(3, mod.getRg ());
