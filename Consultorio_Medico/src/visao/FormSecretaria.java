@@ -34,7 +34,7 @@ public class FormSecretaria extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jFormattedTextFieldCPF = new javax.swing.JFormattedTextField();
         jTextFieldNome = new javax.swing.JTextField();
-        jComboBoxSexo = new javax.swing.JComboBox<>();
+        jComboBoxSexo = new javax.swing.JComboBox<String>();
         jButtonNovo = new javax.swing.JButton();
         jButtonSalvar = new javax.swing.JButton();
         jButtonCad = new javax.swing.JButton();
@@ -95,7 +95,7 @@ public class FormSecretaria extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Feminino", "Masculino" }));
+        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Feminino", "Masculino" }));
 
         jButtonNovo.setText("Novo");
 

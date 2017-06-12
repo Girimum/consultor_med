@@ -3,29 +3,14 @@ package modeloBeans;
 
 
 public class BeansMed {
-    private int codigo ;
+    private int crm;
     private String nome ;
     private String sexo;
     private String endereco;
-    private int crm;
     private int cpf;
     private int rg;
     private String telefone;
     private String senha;
-
-    /**
-     * @return the codigo
-     */
-    public int getCodigo() {
-        return codigo;
-    }
-
-    /**
-     * @param codigo the codigo to set
-     */
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
 
     /**
      * @return the nome
