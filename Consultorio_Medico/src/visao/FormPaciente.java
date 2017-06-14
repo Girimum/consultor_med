@@ -35,7 +35,7 @@ public class FormPaciente extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jFormattedTextFieldCPF = new javax.swing.JFormattedTextField();
         jTextFieldNome = new javax.swing.JTextField();
-        jComboBoxSexo = new javax.swing.JComboBox<>();
+        jComboBoxSexo = new javax.swing.JComboBox<String>();
         jButtonNovo = new javax.swing.JButton();
         jButtonSalvar = new javax.swing.JButton();
         jButtonEditar = new javax.swing.JButton();
@@ -50,15 +50,16 @@ public class FormPaciente extends javax.swing.JFrame {
         jTextFieldEndereco = new javax.swing.JTextField();
         jFormattedTextFieldRG = new javax.swing.JFormattedTextField();
         jLabel10 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadrastro = new javax.swing.JMenu();
         jMenuItemCadMedico = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItemCadPaciente = new javax.swing.JMenuItem();
+        jMenuItemCadCovenio = new javax.swing.JMenuItem();
         jMenuRelatorio = new javax.swing.JMenu();
         jMenuFeramentas = new javax.swing.JMenu();
-        jMenuItemChameBemVindo = new javax.swing.JMenuItem();
+        jMenuItemBemVindos = new javax.swing.JMenuItem();
         jMenuSair = new javax.swing.JMenu();
         jMenuItemSair = new javax.swing.JMenuItem();
 
@@ -106,7 +107,7 @@ public class FormPaciente extends javax.swing.JFrame {
         jPanel1.add(jTextFieldNome);
         jTextFieldNome.setBounds(163, 31, 176, 20);
 
-        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Feminino", "Masculino" }));
+        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Feminino", "Masculino" }));
         jPanel1.add(jComboBoxSexo);
         jComboBoxSexo.setBounds(395, 31, 71, 20);
 
@@ -175,11 +176,11 @@ public class FormPaciente extends javax.swing.JFrame {
         jLabel10.setBounds(0, 0, 580, 420);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(57, 39, 576, 415);
+        jPanel1.setBounds(57, 39, 0, 0);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Fundo login.jpg"))); // NOI18N
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 0, 680, 530);
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(30, 70, 620, 370);
 
         jMenuCadrastro.setText("Cadastro");
 
@@ -210,6 +211,15 @@ public class FormPaciente extends javax.swing.JFrame {
         });
         jMenuCadrastro.add(jMenuItemCadPaciente);
 
+        jMenuItemCadCovenio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/convenios.png"))); // NOI18N
+        jMenuItemCadCovenio.setText("Convênio");
+        jMenuItemCadCovenio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadCovenioActionPerformed(evt);
+            }
+        });
+        jMenuCadrastro.add(jMenuItemCadCovenio);
+
         jMenuBar1.add(jMenuCadrastro);
 
         jMenuRelatorio.setText("Relatorio");
@@ -217,18 +227,20 @@ public class FormPaciente extends javax.swing.JFrame {
 
         jMenuFeramentas.setText("Feramentas");
 
-        jMenuItemChameBemVindo.setText("Inicio");
-        jMenuItemChameBemVindo.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemBemVindos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casa.jpg"))); // NOI18N
+        jMenuItemBemVindos.setText("Inicio");
+        jMenuItemBemVindos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemChameBemVindoActionPerformed(evt);
+                jMenuItemBemVindosActionPerformed(evt);
             }
         });
-        jMenuFeramentas.add(jMenuItemChameBemVindo);
+        jMenuFeramentas.add(jMenuItemBemVindos);
 
         jMenuBar1.add(jMenuFeramentas);
 
         jMenuSair.setText("Sair");
 
+        jMenuItemSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Sair.png"))); // NOI18N
         jMenuItemSair.setText("Sair");
         jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,7 +267,7 @@ public class FormPaciente extends javax.swing.JFrame {
     private void jMenuItemCadMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadMedicoActionPerformed
         FormMedico tela = new FormMedico();
         tela.setVisible(true);
-
+        dispose();
     }//GEN-LAST:event_jMenuItemCadMedicoActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -270,11 +282,17 @@ public class FormPaciente extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jMenuItemCadPacienteActionPerformed
 
-    private void jMenuItemChameBemVindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemChameBemVindoActionPerformed
-        TelaPrincipal tela = new TelaPrincipal();
+    private void jMenuItemCadCovenioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadCovenioActionPerformed
+        FormConvenio tela = new FormConvenio();
         tela.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jMenuItemChameBemVindoActionPerformed
+    }//GEN-LAST:event_jMenuItemCadCovenioActionPerformed
+
+    private void jMenuItemBemVindosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBemVindosActionPerformed
+         TelaPrincipal tela = new TelaPrincipal();
+        tela.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItemBemVindosActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
         System.exit(0);
@@ -326,7 +344,6 @@ public class FormPaciente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -337,13 +354,15 @@ public class FormPaciente extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuCadrastro;
     private javax.swing.JMenu jMenuFeramentas;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItemBemVindos;
+    private javax.swing.JMenuItem jMenuItemCadCovenio;
     private javax.swing.JMenuItem jMenuItemCadMedico;
     private javax.swing.JMenuItem jMenuItemCadPaciente;
-    private javax.swing.JMenuItem jMenuItemChameBemVindo;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenu jMenuRelatorio;
     private javax.swing.JMenu jMenuSair;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordFieldSenhaMed;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableMedico;

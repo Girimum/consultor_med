@@ -3,7 +3,7 @@ package modeloBeans;
 
 
 public class BeansMed {
-    private int crm;
+
     private String nome ;
     private String sexo;
     private String endereco;
@@ -11,7 +11,8 @@ public class BeansMed {
     private int rg;
     private String telefone;
     private String senha;
-
+    
+    
     /**
      * @return the nome
      */
@@ -54,20 +55,7 @@ public class BeansMed {
         this.endereco = endereco;
     }
 
-    /**
-     * @return the crm
-     */
-    public int getCrm() {
-        return crm;
-    }
-
-    /**
-     * @param crm the crm to set
-     */
-    public void setCrm(int crm) {
-        this.crm = crm;
-    }
-
+    
     /**
      * @return the cpf
      */

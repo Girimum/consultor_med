@@ -54,15 +54,15 @@ public class FormSecretaria extends javax.swing.JFrame {
         jPasswordFieldSenhaMed = new javax.swing.JPasswordField();
         jFormattedTextFieldRG = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadrastro = new javax.swing.JMenu();
         jMenuItemCadMedico = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItemCadPaciente = new javax.swing.JMenuItem();
+        jMenuItemCadCovenio = new javax.swing.JMenuItem();
         jMenuRelatorio = new javax.swing.JMenu();
         jMenuFeramentas = new javax.swing.JMenu();
-        jMenuItemChameBemVindo = new javax.swing.JMenuItem();
+        jMenuItemBemVindos = new javax.swing.JMenuItem();
         jMenuSair = new javax.swing.JMenu();
         jMenuItemSair = new javax.swing.JMenuItem();
 
@@ -249,16 +249,12 @@ public class FormSecretaria extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(57, 39, 568, 414);
+        jPanel1.setBounds(40, 60, 568, 414);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Cadastro de Secretárias");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(190, 11, 239, 22);
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Fundo login.jpg"))); // NOI18N
-        getContentPane().add(jLabel12);
-        jLabel12.setBounds(0, 0, 740, 510);
+        jLabel1.setBounds(210, 30, 239, 22);
 
         jMenuCadrastro.setText("Cadastro");
 
@@ -289,6 +285,15 @@ public class FormSecretaria extends javax.swing.JFrame {
         });
         jMenuCadrastro.add(jMenuItemCadPaciente);
 
+        jMenuItemCadCovenio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/convenios.png"))); // NOI18N
+        jMenuItemCadCovenio.setText("Convênio");
+        jMenuItemCadCovenio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadCovenioActionPerformed(evt);
+            }
+        });
+        jMenuCadrastro.add(jMenuItemCadCovenio);
+
         jMenuBar1.add(jMenuCadrastro);
 
         jMenuRelatorio.setText("Relatorio");
@@ -296,18 +301,20 @@ public class FormSecretaria extends javax.swing.JFrame {
 
         jMenuFeramentas.setText("Feramentas");
 
-        jMenuItemChameBemVindo.setText("Inicio");
-        jMenuItemChameBemVindo.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemBemVindos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/casa.jpg"))); // NOI18N
+        jMenuItemBemVindos.setText("Inicio");
+        jMenuItemBemVindos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemChameBemVindoActionPerformed(evt);
+                jMenuItemBemVindosActionPerformed(evt);
             }
         });
-        jMenuFeramentas.add(jMenuItemChameBemVindo);
+        jMenuFeramentas.add(jMenuItemBemVindos);
 
         jMenuBar1.add(jMenuFeramentas);
 
         jMenuSair.setText("Sair");
 
+        jMenuItemSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Sair.png"))); // NOI18N
         jMenuItemSair.setText("Sair");
         jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -338,7 +345,7 @@ public class FormSecretaria extends javax.swing.JFrame {
     private void jMenuItemCadMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadMedicoActionPerformed
         FormMedico tela = new FormMedico();
         tela.setVisible(true);
-
+        dispose();
     }//GEN-LAST:event_jMenuItemCadMedicoActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -353,11 +360,16 @@ public class FormSecretaria extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jMenuItemCadPacienteActionPerformed
 
-    private void jMenuItemChameBemVindoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemChameBemVindoActionPerformed
-        TelaPrincipal tela = new TelaPrincipal();
+    private void jMenuItemCadCovenioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadCovenioActionPerformed
+        FormConvenio tela = new FormConvenio();
         tela.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jMenuItemChameBemVindoActionPerformed
+    }//GEN-LAST:event_jMenuItemCadCovenioActionPerformed
+
+    private void jMenuItemBemVindosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBemVindosActionPerformed
+       TelaPrincipal tela = new TelaPrincipal();
+        tela.setVisible(true);
+    }//GEN-LAST:event_jMenuItemBemVindosActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
         System.exit(0);
@@ -409,7 +421,6 @@ public class FormSecretaria extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField jFormattedTextFieldCPF;
     private javax.swing.JFormattedTextField jFormattedTextFieldRG;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -422,9 +433,10 @@ public class FormSecretaria extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuCadrastro;
     private javax.swing.JMenu jMenuFeramentas;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItemBemVindos;
+    private javax.swing.JMenuItem jMenuItemCadCovenio;
     private javax.swing.JMenuItem jMenuItemCadMedico;
     private javax.swing.JMenuItem jMenuItemCadPaciente;
-    private javax.swing.JMenuItem jMenuItemChameBemVindo;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenu jMenuRelatorio;
     private javax.swing.JMenu jMenuSair;
