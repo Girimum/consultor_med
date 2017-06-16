@@ -50,7 +50,7 @@ public class FormMedico extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextFieldFoneTeleF = new javax.swing.JTextField();
+        jTextFieldTelefone = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jTextFieldEndereco = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -60,7 +60,7 @@ public class FormMedico extends javax.swing.JFrame {
         jButtonCancela = new javax.swing.JButton();
         jTextFieldPesquisar = new javax.swing.JTextField();
         jButtonPesquisar = new javax.swing.JButton();
-        jComboBoxTipoPesquisa = new javax.swing.JComboBox<String>();
+        jComboBoxTipoPesquisa = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadrastro = new javax.swing.JMenu();
@@ -160,7 +160,7 @@ public class FormMedico extends javax.swing.JFrame {
 
         jLabel7.setText("Telefone:");
 
-        jTextFieldFoneTeleF.setEnabled(false);
+        jTextFieldTelefone.setEnabled(false);
 
         jLabel8.setText("Endereço:");
 
@@ -187,7 +187,7 @@ public class FormMedico extends javax.swing.JFrame {
         }
         jFormattedTextFieldRG.setEnabled(false);
 
-        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F", " " }));
+        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
         jComboBoxSexo.setEnabled(false);
         jComboBoxSexo.setName(""); // NOI18N
         jComboBoxSexo.addActionListener(new java.awt.event.ActionListener() {
@@ -211,14 +211,7 @@ public class FormMedico extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxTipoPesquisa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F", " " }));
-        jComboBoxTipoPesquisa.setEnabled(false);
-        jComboBoxTipoPesquisa.setName(""); // NOI18N
-        jComboBoxTipoPesquisa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxTipoPesquisaActionPerformed(evt);
-            }
-        });
+        jComboBoxTipoPesquisa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "nome", "crm" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -226,16 +219,16 @@ public class FormMedico extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButtonSalvar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonNovo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonCancela, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButtonExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButtonNovo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonCancela, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButtonEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
@@ -245,43 +238,39 @@ public class FormMedico extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBoxSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(16, 16, 16)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel6))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jFormattedTextFieldRG, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel8))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextFieldFoneTeleF, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                                            .addComponent(jTextFieldEndereco)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jComboBoxSexo, 0, 49, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(16, 16, 16)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel6))
+                                    .addGap(25, 25, 25)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                                        .addComponent(jFormattedTextFieldRG))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel8)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                                        .addComponent(jTextFieldTelefone)))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jComboBoxTipoPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6)
+                                            .addComponent(jTextFieldPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
+                                            .addGap(80, 80, 80)
+                                            .addComponent(jButtonPesquisar))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(jLabel9)
-                                            .addComponent(jComboBoxTipoPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jTextFieldPesquisar)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButtonPesquisar)
-                                                .addGap(72, 72, 72))
-                                            .addComponent(jPasswordFieldSenhaMed))))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                                            .addGap(24, 24, 24)
+                                            .addComponent(jPasswordFieldSenhaMed))))))))
+                .addContainerGap(267, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,17 +284,19 @@ public class FormMedico extends javax.swing.JFrame {
                             .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBoxSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7)
-                            .addComponent(jTextFieldFoneTeleF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel5)
+                                .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFormattedTextFieldRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jFormattedTextFieldRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel6)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
@@ -415,7 +406,7 @@ public class FormMedico extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(567, 567, 567))
+                .addGap(322, 322, 322))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -446,7 +437,7 @@ public class FormMedico extends javax.swing.JFrame {
         mod.setNome(jTextFieldNome.getText());
         mod.setCpf(jFormattedTextFieldCPF.getText());
         mod.setRg(jFormattedTextFieldRG.getText());
-        mod.setTelefone(jTextFieldFoneTeleF.getText());
+        mod.setTelefone(jTextFieldTelefone.getText());
         mod.setEndereco(jTextFieldEndereco.getText());
         mod.setSexo((String) jComboBoxSexo.getSelectedItem());
         mod.setSenha(jPasswordFieldSenhaMed.getText());
@@ -457,16 +448,16 @@ public class FormMedico extends javax.swing.JFrame {
         jTextFieldNome.setText("");
         jFormattedTextFieldCPF.setText("");
         jFormattedTextFieldRG.setText("");
-        jTextFieldFoneTeleF.setText("");
+        jTextFieldTelefone.setText("");
         jTextFieldEndereco.setText("");
         
-         jTextFieldNome.setEnabled(false);
-         jFormattedTextFieldCPF.setEnabled(false);
-         jFormattedTextFieldRG.setEnabled(false);
-         jComboBoxSexo.setEnabled(false);
-         jTextFieldFoneTeleF.setEnabled(false);
-         jTextFieldEndereco.setEnabled(false);
-         jButtonSalvar.setEnabled(false);
+        jTextFieldNome.setEnabled(false);
+        jFormattedTextFieldCPF.setEnabled(false);
+        jFormattedTextFieldRG.setEnabled(false);
+        jComboBoxSexo.setEnabled(false);
+        jTextFieldTelefone.setEnabled(false);
+        jTextFieldEndereco.setEnabled(false);
+        jButtonSalvar.setEnabled(false);
         
        
     }//GEN-LAST:event_jButtonSalvarActionPerformed
@@ -485,7 +476,7 @@ public class FormMedico extends javax.swing.JFrame {
         jFormattedTextFieldCPF.setEnabled(true);
         jFormattedTextFieldRG.setEnabled(true);
         jComboBoxSexo.setEnabled(true);
-        jTextFieldFoneTeleF.setEnabled(true);
+        jTextFieldTelefone.setEnabled(true);
         jTextFieldEndereco.setEnabled(true);
         jPasswordFieldSenhaMed.setEnabled(true);
         jButtonCancela.setEnabled(true);
@@ -531,19 +522,19 @@ public class FormMedico extends javax.swing.JFrame {
         jFormattedTextFieldCPF.setEnabled(!true);
         jFormattedTextFieldRG.setEnabled(!true);
         jComboBoxSexo.setEnabled(!true);
-        jTextFieldFoneTeleF.setEnabled(!true);
+        jTextFieldTelefone.setEnabled(!true);
         jTextFieldEndereco.setEnabled(!true);
         jPasswordFieldSenhaMed.setEnabled(!true);
         jButtonCancela.setEnabled(!true);
-          jButtonSalvar.setEnabled(!true);
-          
-         jTextFieldNome.setEnabled(false);
-         jFormattedTextFieldCPF.setEnabled(false);
-         jFormattedTextFieldRG.setEnabled(false);
-         jComboBoxSexo.setEnabled(false);
-         jTextFieldFoneTeleF.setEnabled(false);
-         jTextFieldEndereco.setEnabled(false);
-         jButtonSalvar.setEnabled(false);
+        jButtonSalvar.setEnabled(!true);
+
+        jTextFieldNome.setEnabled(false);
+        jFormattedTextFieldCPF.setEnabled(false);
+        jFormattedTextFieldRG.setEnabled(false);
+        jComboBoxSexo.setEnabled(false);
+        jTextFieldTelefone.setEnabled(false);
+        jTextFieldEndereco.setEnabled(false);
+        jButtonSalvar.setEnabled(false);
         
     }//GEN-LAST:event_jButtonCancelaActionPerformed
 
@@ -553,7 +544,7 @@ public class FormMedico extends javax.swing.JFrame {
         jFormattedTextFieldCPF.setEnabled(true);
         jFormattedTextFieldRG.setEnabled(true);
         jComboBoxSexo.setEnabled(true);
-        jTextFieldFoneTeleF.setEnabled(true);
+        jTextFieldTelefone.setEnabled(true);
         jTextFieldEndereco.setEnabled(true);
         jPasswordFieldSenhaMed.setEnabled(true);
         jButtonCancela.setEnabled(true);
@@ -567,16 +558,17 @@ public class FormMedico extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldEnderecoActionPerformed
 
-    private void jComboBoxTipoPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipoPesquisaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxTipoPesquisaActionPerformed
-
     private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
         mod.setPesquisa(jTextFieldPesquisar.getText());
+        mod.setTipoPesquisa((String) jComboBoxTipoPesquisa.getSelectedItem());
         BeansMed model = control.buscaMedico(mod);
         jTextFieldNome.setText(model.getNome());
         jFormattedTextFieldCPF.setText(model.getCpf());
         jFormattedTextFieldRG.setText(model.getRg());
+        jTextFieldTelefone.setText(model.getTelefone());
+        jTextFieldEndereco.setText(model.getEndereco());
+        jComboBoxSexo.setSelectedItem(model.getSexo());
+        
     }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
     /**
@@ -620,7 +612,7 @@ public class FormMedico extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPesquisar;
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JComboBox<String> jComboBoxSexo;
-    private javax.swing.JComboBox<String> jComboBoxTipoPesquisa;
+    private javax.swing.JComboBox jComboBoxTipoPesquisa;
     private javax.swing.JFormattedTextField jFormattedTextFieldCPF;
     private javax.swing.JFormattedTextField jFormattedTextFieldNome;
     private javax.swing.JFormattedTextField jFormattedTextFieldRG;
@@ -651,9 +643,9 @@ public class FormMedico extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTableMedico;
     private javax.swing.JTextField jTextFieldEndereco;
-    private javax.swing.JTextField jTextFieldFoneTeleF;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldPesquisar;
     private javax.swing.JTextField jTextFieldRG;
+    private javax.swing.JTextField jTextFieldTelefone;
     // End of variables declaration//GEN-END:variables
 }
