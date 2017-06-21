@@ -28,6 +28,22 @@ public class FormConvenio extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jComboBoxPesqC = new javax.swing.JComboBox();
+        jButtonPesqC = new javax.swing.JButton();
+        jTextFieldNomeC = new javax.swing.JTextField();
+        jTextFieldCNPJ = new javax.swing.JTextField();
+        jTextFieldPlano = new javax.swing.JTextField();
+        jTextFieldTeleC = new javax.swing.JTextField();
+        jTextFieldEndC = new javax.swing.JTextField();
+        jTextFieldPesqC = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jButtonNovoC = new javax.swing.JButton();
+        jButtonSalvarC = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadrastro = new javax.swing.JMenu();
         jMenuItemCadMedico = new javax.swing.JMenuItem();
@@ -41,9 +57,102 @@ public class FormConvenio extends javax.swing.JFrame {
         jMenuItemSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Cadrastro Convênio");
+        jLabel1.setText("Cadastro Convênio");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(285, 11, 148, 22);
+
+        jComboBoxPesqC.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nome", "CNPJ" }));
+        getContentPane().add(jComboBoxPesqC);
+        jComboBoxPesqC.setBounds(174, 257, 60, 20);
+
+        jButtonPesqC.setText("Pesquisar");
+        getContentPane().add(jButtonPesqC);
+        jButtonPesqC.setBounds(498, 256, 100, 23);
+        getContentPane().add(jTextFieldNomeC);
+        jTextFieldNomeC.setBounds(240, 111, 123, 20);
+        getContentPane().add(jTextFieldCNPJ);
+        jTextFieldCNPJ.setBounds(240, 167, 123, 20);
+        getContentPane().add(jTextFieldPlano);
+        jTextFieldPlano.setBounds(240, 224, 231, 20);
+        getContentPane().add(jTextFieldTeleC);
+        jTextFieldTeleC.setBounds(554, 129, 141, 20);
+
+        jTextFieldEndC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEndCActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldEndC);
+        jTextFieldEndC.setBounds(557, 167, 141, 20);
+        getContentPane().add(jTextFieldPesqC);
+        jTextFieldPesqC.setBounds(240, 257, 231, 20);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel2.setText("Nome:");
+
+        jLabel5.setText("CNPJ:");
+
+        jLabel6.setText("Plano:");
+
+        jLabel3.setText("Telefone:");
+
+        jLabel4.setText("Endereço:");
+
+        jButtonNovoC.setText("Novo");
+
+        jButtonSalvarC.setText("Salvar");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(32, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButtonNovoC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonSalvarC, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
+                        .addGap(332, 332, 332)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE))
+                .addGap(174, 174, 174))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jButtonNovoC)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(4, 4, 4)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jButtonSalvarC))
+                .addGap(11, 11, 11)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addComponent(jLabel6)
+                .addContainerGap(146, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(40, 50, 680, 360);
 
         jMenuCadrastro.setText("Cadastro");
 
@@ -116,23 +225,6 @@ public class FormConvenio extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addComponent(jLabel1)
-                .addContainerGap(129, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(246, Short.MAX_VALUE))
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -170,6 +262,10 @@ public class FormConvenio extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItemSairActionPerformed
 
+    private void jTextFieldEndCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEndCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEndCActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -206,7 +302,16 @@ public class FormConvenio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonNovoC;
+    private javax.swing.JButton jButtonPesqC;
+    private javax.swing.JButton jButtonSalvarC;
+    private javax.swing.JComboBox jComboBoxPesqC;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadrastro;
     private javax.swing.JMenu jMenuFeramentas;
@@ -218,5 +323,12 @@ public class FormConvenio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenu jMenuRelatorio;
     private javax.swing.JMenu jMenuSair;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextFieldCNPJ;
+    private javax.swing.JTextField jTextFieldEndC;
+    private javax.swing.JTextField jTextFieldNomeC;
+    private javax.swing.JTextField jTextFieldPesqC;
+    private javax.swing.JTextField jTextFieldPlano;
+    private javax.swing.JTextField jTextFieldTeleC;
     // End of variables declaration//GEN-END:variables
 }

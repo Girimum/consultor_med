@@ -50,7 +50,27 @@ public class FormPaciente extends javax.swing.JFrame {
         jTextFieldEndereco = new javax.swing.JTextField();
         jFormattedTextFieldRG = new javax.swing.JFormattedTextField();
         jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jComboBoxPesqP = new javax.swing.JComboBox();
+        jTextFieldEndeP = new javax.swing.JTextField();
+        jTextFieldTeleP = new javax.swing.JTextField();
+        jTextFieldPesqP = new javax.swing.JTextField();
+        jTextFieldConvP = new javax.swing.JTextField();
+        jButtonPesqP = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jTextFieldNomeP = new javax.swing.JTextField();
+        jFormattedTextFieldCPF_P = new javax.swing.JFormattedTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jFormattedTextFieldRG_p = new javax.swing.JFormattedTextField();
+        jComboBoxSexoP = new javax.swing.JComboBox();
+        jButtonEditarP = new javax.swing.JButton();
+        jButtonSalvarP = new javax.swing.JButton();
+        jButtonNovoP = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadrastro = new javax.swing.JMenu();
         jMenuItemCadMedico = new javax.swing.JMenuItem();
@@ -178,9 +198,145 @@ public class FormPaciente extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(57, 39, 0, 0);
 
+        jLabel11.setText("Endereço:");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(390, 170, 60, 14);
+
+        jLabel12.setText("Telefone:");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(390, 220, 60, 14);
+
+        jLabel14.setText("RG:");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(150, 230, 30, 10);
+
+        jLabel15.setText("Sexo:");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(390, 110, 40, 14);
+
+        jLabel16.setText("Convênio:");
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(140, 280, 60, 14);
+
+        jComboBoxPesqP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nome", "CPF" }));
+        getContentPane().add(jComboBoxPesqP);
+        jComboBoxPesqP.setBounds(130, 310, 60, 20);
+
+        jTextFieldEndeP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEndePActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldEndeP);
+        jTextFieldEndeP.setBounds(460, 170, 120, 20);
+        getContentPane().add(jTextFieldTeleP);
+        jTextFieldTeleP.setBounds(460, 220, 120, 20);
+        getContentPane().add(jTextFieldPesqP);
+        jTextFieldPesqP.setBounds(210, 310, 220, 20);
+        getContentPane().add(jTextFieldConvP);
+        jTextFieldConvP.setBounds(210, 280, 220, 20);
+
+        jButtonPesqP.setText("Presquisa");
+        getContentPane().add(jButtonPesqP);
+        jButtonPesqP.setBounds(460, 310, 100, 23);
+
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jTextFieldNomeP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNomePActionPerformed(evt);
+            }
+        });
+
+        try {
+            jFormattedTextFieldCPF_P.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        jLabel13.setText("CPF:");
+
+        jLabel3.setText("Nome:");
+
+        try {
+            jFormattedTextFieldRG_p.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########-#")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextFieldRG_p.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldRG_pActionPerformed(evt);
+            }
+        });
+
+        jComboBoxSexoP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
+        jComboBoxSexoP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxSexoPActionPerformed(evt);
+            }
+        });
+
+        jButtonEditarP.setText("Editar");
+
+        jButtonSalvarP.setText("Salvar");
+
+        jButtonNovoP.setText("Novo");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jButtonSalvarP, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(jButtonEditarP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonNovoP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jFormattedTextFieldRG_p)
+                    .addComponent(jTextFieldNomeP)
+                    .addComponent(jFormattedTextFieldCPF_P, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
+                .addGap(142, 142, 142)
+                .addComponent(jComboBoxSexoP, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(156, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel13)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jTextFieldNomeP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBoxSexoP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(35, 35, 35)
+                                .addComponent(jFormattedTextFieldCPF_P, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(40, 40, 40)
+                        .addComponent(jFormattedTextFieldRG_p, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jButtonNovoP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonSalvarP)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonEditarP)))
+                .addContainerGap(213, Short.MAX_VALUE))
+        );
+
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(30, 70, 620, 370);
+        jPanel2.setBounds(20, 70, 630, 390);
 
         jMenuCadrastro.setText("Cadastro");
 
@@ -298,6 +454,22 @@ public class FormPaciente extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItemSairActionPerformed
 
+    private void jTextFieldEndePActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEndePActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEndePActionPerformed
+
+    private void jTextFieldNomePActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomePActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNomePActionPerformed
+
+    private void jFormattedTextFieldRG_pActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldRG_pActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldRG_pActionPerformed
+
+    private void jComboBoxSexoPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSexoPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxSexoPActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -335,15 +507,30 @@ public class FormPaciente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonEditar;
+    private javax.swing.JButton jButtonEditarP;
     private javax.swing.JButton jButtonExcluir;
     private javax.swing.JButton jButtonNovo;
+    private javax.swing.JButton jButtonNovoP;
+    private javax.swing.JButton jButtonPesqP;
     private javax.swing.JButton jButtonSalvar;
+    private javax.swing.JButton jButtonSalvarP;
+    private javax.swing.JComboBox jComboBoxPesqP;
     private javax.swing.JComboBox<String> jComboBoxSexo;
+    private javax.swing.JComboBox jComboBoxSexoP;
     private javax.swing.JFormattedTextField jFormattedTextFieldCPF;
+    private javax.swing.JFormattedTextField jFormattedTextFieldCPF_P;
     private javax.swing.JFormattedTextField jFormattedTextFieldRG;
+    private javax.swing.JFormattedTextField jFormattedTextFieldRG_p;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -366,8 +553,13 @@ public class FormPaciente extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordFieldSenhaMed;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableMedico;
+    private javax.swing.JTextField jTextFieldConvP;
+    private javax.swing.JTextField jTextFieldEndeP;
     private javax.swing.JTextField jTextFieldEndereco;
     private javax.swing.JTextField jTextFieldFone;
     private javax.swing.JTextField jTextFieldNome;
+    private javax.swing.JTextField jTextFieldNomeP;
+    private javax.swing.JTextField jTextFieldPesqP;
+    private javax.swing.JTextField jTextFieldTeleP;
     // End of variables declaration//GEN-END:variables
 }

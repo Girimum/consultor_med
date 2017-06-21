@@ -5,6 +5,11 @@
  */
 package visao;
 
+import javax.swing.JOptionPane;
+import modeloBeans.Beans;
+import modeloConection.conexaoBD;
+import modeloDao.DaoSecretaria;
+
 /**
  *
  * @author Girimun
@@ -17,7 +22,10 @@ public class FormSecretaria extends javax.swing.JFrame {
     public FormSecretaria() {
         initComponents();
     }
-
+  Beans mod = new Beans();
+    DaoSecretaria control = new DaoSecretaria();
+    conexaoBD conex = new conexaoBD();
+    int flag =0;    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,7 +45,7 @@ public class FormSecretaria extends javax.swing.JFrame {
         jComboBoxSexo = new javax.swing.JComboBox<String>();
         jButtonNovo = new javax.swing.JButton();
         jButtonSalvar = new javax.swing.JButton();
-        jButtonCad = new javax.swing.JButton();
+        jButtonCancela = new javax.swing.JButton();
         jButtonEditar = new javax.swing.JButton();
         jButtonExcluir = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -88,24 +96,56 @@ public class FormSecretaria extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextFieldCPF.setEnabled(false);
 
+        jTextFieldNome.setEnabled(false);
         jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNomeActionPerformed(evt);
             }
         });
 
-        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Feminino", "Masculino" }));
+        jComboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
+        jComboBoxSexo.setEnabled(false);
 
         jButtonNovo.setText("Novo");
+        jButtonNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNovoActionPerformed(evt);
+            }
+        });
 
         jButtonSalvar.setText("Salvar");
+        jButtonSalvar.setEnabled(false);
+        jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarActionPerformed(evt);
+            }
+        });
 
-        jButtonCad.setText("Cadastrar");
+        jButtonCancela.setText("Cancela");
+        jButtonCancela.setEnabled(false);
+        jButtonCancela.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelaActionPerformed(evt);
+            }
+        });
 
         jButtonEditar.setText("Editar");
+        jButtonEditar.setEnabled(false);
+        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarActionPerformed(evt);
+            }
+        });
 
         jButtonExcluir.setText("Excluir");
+        jButtonExcluir.setEnabled(false);
+        jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExcluirActionPerformed(evt);
+            }
+        });
 
         jTableMedico.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -128,10 +168,15 @@ public class FormSecretaria extends javax.swing.JFrame {
 
         jLabel7.setText("Telefone:");
 
+        jTextFieldFone.setEnabled(false);
+
         jLabel8.setText("Endereço:");
+
+        jTextFieldEndereco.setEnabled(false);
 
         jLabel9.setText("Senha de Acesso:");
 
+        jPasswordFieldSenhaMed.setEnabled(false);
         jPasswordFieldSenhaMed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordFieldSenhaMedActionPerformed(evt);
@@ -143,6 +188,7 @@ public class FormSecretaria extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextFieldRG.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -151,16 +197,15 @@ public class FormSecretaria extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jButtonSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonCad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonNovo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButtonEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)))
-                        .addGap(35, 35, 35)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButtonEditar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonCancela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonNovo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(45, 45, 45)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -195,10 +240,8 @@ public class FormSecretaria extends javax.swing.JFrame {
                                 .addGap(22, 22, 22)
                                 .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButtonPesquisar)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                                .addComponent(jButtonPesquisar)))))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,7 +253,7 @@ public class FormSecretaria extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonSalvar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonCad)
+                        .addComponent(jButtonCancela)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonEditar)
                         .addGap(5, 5, 5)
@@ -249,7 +292,7 @@ public class FormSecretaria extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(40, 60, 568, 414);
+        jPanel1.setBounds(50, 50, 530, 414);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Cadastro de Secretárias");
@@ -375,6 +418,127 @@ public class FormSecretaria extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItemSairActionPerformed
 
+    private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
+  flag= 2;
+        jButtonSalvar.setEnabled(true);
+        jTextFieldNome.setEnabled(true);
+        jFormattedTextFieldCPF.setEnabled(true);
+        jFormattedTextFieldRG.setEnabled(true);
+        jComboBoxSexo.setEnabled(true);
+        jTextFieldFone.setEnabled(true);
+        jTextFieldEndereco.setEnabled(true);
+        jPasswordFieldSenhaMed.setEnabled(true);
+        jButtonCancela.setEnabled(true);
+        jButtonEditar.setEnabled(false);
+        jButtonNovo.setEnabled(false);
+        jButtonExcluir.setEnabled(false);
+      
+    }//GEN-LAST:event_jButtonEditarActionPerformed
+
+    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
+ flag= 1;
+        jButtonSalvar.setEnabled(true);
+        jTextFieldNome.setEnabled(true);
+        jFormattedTextFieldCPF.setEnabled(true);
+        jFormattedTextFieldRG.setEnabled(true);
+        jComboBoxSexo.setEnabled(true);
+        jTextFieldFone.setEnabled(true);
+        jTextFieldEndereco.setEnabled(true);
+        jPasswordFieldSenhaMed.setEnabled(true);
+        jButtonCancela.setEnabled(true);
+        jTextFieldCRM.setEnabled(true);       
+    }//GEN-LAST:event_jButtonNovoActionPerformed
+
+    private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
+ Beans mod = new Beans();
+        DaoSecretaria cad = new DaoSecretaria();
+        if(flag==1){
+            mod.setNome(jTextFieldNome.getText());
+            mod.setCpf(jFormattedTextFieldCPF.getText());
+            mod.setRg(jFormattedTextFieldRG.getText());
+            mod.setTelefone(jTextFieldFone.getText());
+            mod.setEndereco(jTextFieldEndereco.getText());
+            mod.setSexo((String) jComboBoxSexo.getSelectedItem());
+            mod.setSenha(jPasswordFieldSenhaMed.getText());
+            
+
+            cad.Salvar(mod);
+
+            //control.Salvar(mod); 
+            jTextFieldNome.setText("");
+            jFormattedTextFieldCPF.setText("");
+            jFormattedTextFieldRG.setText("");
+            jTextFieldFone.setText("");
+            jTextFieldEndereco.setText("");
+
+            jTextFieldNome.setEnabled(false);
+            jFormattedTextFieldCPF.setEnabled(false);
+            jFormattedTextFieldRG.setEnabled(false);
+            jComboBoxSexo.setEnabled(false);
+            jTextFieldFone.setEnabled(false);
+            jTextFieldEndereco.setEnabled(false);
+            jButtonSalvar.setEnabled(false);
+            jPasswordFieldSenhaMed.setEnabled(false);
+            jButtonNovo.setEnabled(true);
+        }else if(flag==2){
+            
+            mod.setNome(jTextFieldNome.getText());
+            mod.setCpf(jFormattedTextFieldCPF.getText());
+            mod.setRg(jFormattedTextFieldRG.getText());
+            mod.setTelefone(jTextFieldFone.getText());
+            mod.setEndereco(jTextFieldEndereco.getText());
+            mod.setSexo((String) jComboBoxSexo.getSelectedItem());
+            mod.setSenha(jPasswordFieldSenhaMed.getText());         
+            cad.Editar(mod);
+
+            //control.Editar(mod); 
+            jTextFieldNome.setText("");
+            jFormattedTextFieldCPF.setText("");
+            jFormattedTextFieldRG.setText("");
+            jTextFieldFone.setText("");
+            jTextFieldEndereco.setText("");
+
+            jTextFieldNome.setEnabled(false);
+            jFormattedTextFieldCPF.setEnabled(false);
+            jFormattedTextFieldRG.setEnabled(false);
+            jComboBoxSexo.setEnabled(false);
+            jTextFieldFone.setEnabled(false);
+            jTextFieldEndereco.setEnabled(false);
+            jButtonSalvar.setEnabled(false);
+            jPasswordFieldSenhaMed.setEnabled(false);
+            jButtonNovo.setEnabled(true);     
+    }//GEN-LAST:event_jButtonSalvarActionPerformed
+    }
+    private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
+        int resposta =0;
+        resposta= JOptionPane.showConfirmDialog(rootPane, "Deseja realmente excluir esse cadastro?");
+        if (resposta== JOptionPane.YES_OPTION){
+            control.Excluir(mod);
+        }
+    }//GEN-LAST:event_jButtonExcluirActionPerformed
+
+    private void jButtonCancelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelaActionPerformed
+        jButtonSalvar.setEnabled(!true);
+        jTextFieldNome.setEnabled(!true);
+        jFormattedTextFieldCPF.setEnabled(!true);
+        jFormattedTextFieldRG.setEnabled(!true);
+        jComboBoxSexo.setEnabled(!true);
+        jTextFieldFone.setEnabled(!true);
+        jTextFieldEndereco.setEnabled(!true);
+        jPasswordFieldSenhaMed.setEnabled(!true);
+        jButtonCancela.setEnabled(!true);
+        
+        jButtonNovo.setEnabled(true);
+        jTextFieldNome.setEnabled(false);
+        jFormattedTextFieldCPF.setEnabled(false);
+        jFormattedTextFieldRG.setEnabled(false);
+        jComboBoxSexo.setEnabled(false);
+        jTextFieldFone.setEnabled(false);
+        jTextFieldEndereco.setEnabled(false);
+        jButtonSalvar.setEnabled(false);
+        
+    }//GEN-LAST:event_jButtonCancelaActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -411,7 +575,7 @@ public class FormSecretaria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonCad;
+    private javax.swing.JButton jButtonCancela;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonExcluir;
     private javax.swing.JButton jButtonNovo;
